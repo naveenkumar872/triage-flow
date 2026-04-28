@@ -111,9 +111,6 @@ ragworks-final/
 │   ├── utils/
 │   │   ├── cost_tracker.py            # Per-agent LLM token usage + USD cost tracking
 │   │   └── agent_logger.py            # Structured per-agent run logging
-│   ├── database/
-│   │   ├── push_sample_data.py        # Seeds TiDB with sample customers + routing rules
-│   │   └── sample_data_preview.json   # Sample seed data
 │   ├── config/
 │   │   ├── .env                       # All secrets (not committed)
 │   │   ├── credentials.json           # Gmail OAuth2 client credentials (not committed)
@@ -218,14 +215,7 @@ cp backend/config/.env.example backend/config/.env
 3. Download the JSON and save it as `backend/config/credentials.json`
 4. On first run, a browser window will open to complete the OAuth flow. The token is saved automatically to `backend/config/token.json`.
 
-### 6. Seed the TiDB database
-
-```bash
-cd backend
-python database/push_sample_data.py
-```
-
-### 7. Install frontend dependencies
+### 6. Install frontend dependencies
 
 ```bash
 cd frontend
