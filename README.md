@@ -6,6 +6,7 @@ TriageFlow is an end-to-end agentic AI system that automatically reads unread su
 
 ## Table of Contents
 
+- [Demo](#demo)
 - [Architecture Overview](#architecture-overview)
 - [Pipeline Stages](#pipeline-stages)
 - [Tech Stack](#tech-stack)
@@ -18,6 +19,14 @@ TriageFlow is an end-to-end agentic AI system that automatically reads unread su
 - [Running Tests](#running-tests)
 - [Security & Guardrails](#security--guardrails)
 - [Observability](#observability)
+
+---
+
+## Demo
+
+> 📹 Video walkthrough of the full pipeline — from raw Gmail inbox to Jira ticket, Slack notification, and auto-reply.
+
+https://github.com/user-attachments/assets/2f793f45-febd-4649-83ff-bc920d7dfb34
 
 ---
 
