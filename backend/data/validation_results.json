@@ -1,0 +1,62 @@
+[
+  {
+    "gmail_id": "19dd02a469fe6e03",
+    "thread_id": "19dd02a469fe6e03",
+    "message_id": "<CAPDZxvX_oP7YFg-g6snub44r74W9L1DGBvAwEtUh+PEA-DHhRg@mail.gmail.com>",
+    "subject": "UI is confusing",
+    "sender_raw": "Naveen Kumar <naveenkumar04102005@gmail.com>",
+    "sender_name": "Naveen Kumar",
+    "sender_email": "naveenkumar04102005@gmail.com",
+    "recipient": "Naveen Kumar <kumarnaveen54950@gmail.com>",
+    "date": "Mon, 27 Apr 2026 23:48:35 +0530",
+    "snippet": "Hi, The dashboard layout is very confusing and difficult to navigate. It would be helpful if it was simplified. Thanks,",
+    "body_text": "Hi,\r\n\r\nThe dashboard layout is very confusing and difficult to navigate.\r\n\r\nIt would be helpful if it was simplified.\r\n\r\nThanks,\r\n",
+    "body_html": "<div dir=\"ltr\">Hi,<br><br>The dashboard layout is very confusing and difficult to navigate.<br><br>It would be helpful if it was simplified.<br><br>Thanks,</div>\r\n",
+    "body_source": "text/plain",
+    "attachments": [],
+    "labels": [
+      "UNREAD",
+      "IMPORTANT",
+      "CATEGORY_PERSONAL",
+      "INBOX"
+    ],
+    "entities": {
+      "account_email_in_body": null
+    },
+    "validation_result": {
+      "label": "valid_issue",
+      "reason": "Customer reports a usability problem with the dashboard layout and suggests simplification, requiring a support response.",
+      "confidence": "high"
+    }
+  },
+  {
+    "gmail_id": "19dcf3e4fa79e9a6",
+    "thread_id": "19dcf3e4fa79e9a6",
+    "message_id": "<CAPDZxvUKeUPEqgjvUA0rCLj-yrNGPDMbvKakX9aQMGvN0-tbDw@mail.gmail.com>",
+    "subject": "Need export in CSV format",
+    "sender_raw": "Naveen Kumar <naveenkumar04102005@gmail.com>",
+    "sender_name": "Naveen Kumar",
+    "sender_email": "naveenkumar04102005@gmail.com",
+    "recipient": "Naveen Kumar <kumarnaveen54950@gmail.com>",
+    "date": "Mon, 27 Apr 2026 19:30:51 +0530",
+    "snippet": "Hi team, Currently reports are only downloadable in PDF. Can we have an option to export in CSV format? Thanks,",
+    "body_text": "Hi team,\r\n\r\nCurrently reports are only downloadable in PDF.\r\n\r\nCan we have an option to export in CSV format?\r\n\r\nThanks,\r\n",
+    "body_html": "<div dir=\"ltr\">Hi team,<br><br>Currently reports are only downloadable in PDF.<br><br>Can we have an option to export in CSV format?<br><br>Thanks,</div>\r\n",
+    "body_source": "text/plain",
+    "attachments": [],
+    "labels": [
+      "UNREAD",
+      "IMPORTANT",
+      "CATEGORY_PERSONAL",
+      "INBOX"
+    ],
+    "entities": {
+      "account_email_in_body": null
+    },
+    "validation_result": {
+      "label": "valid_issue",
+      "reason": "Customer is making an explicit feature request for CSV export, requiring a support team response.",
+      "confidence": "high"
+    }
+  }
+]

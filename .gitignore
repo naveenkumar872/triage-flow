@@ -1,0 +1,37 @@
+# Environment variables
+.env
+
+*.env
+
+# Google OAuth credentials & tokens
+backend/config/credentials.json
+backend/config/token.json
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Cache directories
+.cache/
+*.cache
+.pytest_cache/
+
+# Node modules & build
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

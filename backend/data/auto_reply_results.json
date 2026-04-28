@@ -1,0 +1,98 @@
+[
+  {
+    "gmail_id": "19dd039867c0be8a",
+    "thread_id": "19dd039867c0be8a",
+    "message_id": "<CABuURmRD1zmwyK-dqYAUmB9=ikmwwB4J-S1OYuSkwt1G47++hw@mail.gmail.com>",
+    "subject": "Cannot access dashboard",
+    "sender_raw": "Naveen Kumar <04naveenk@gmail.com>",
+    "sender_name": "Naveen Kumar",
+    "sender_email": "04naveenk@gmail.com",
+    "recipient": "Naveen Kumar <kumarnaveen54950@gmail.com>",
+    "date": "Tue, 28 Apr 2026 00:05:14 +0530",
+    "snippet": "Hi Team, I am unable to access the dashboard after logging in. It keeps loading for a long time and eventually shows a blank screen. I tried clearing browser cache and using another browser but still",
+    "body_text": "Hi Team,\r\n\r\nI am unable to access the dashboard after logging in. It keeps loading for\r\na long time and eventually shows a blank screen.\r\n\r\nI tried clearing browser cache and using another browser but still facing\r\nthe same issue.\r\n\r\nPlease check this on priority as I need to access reports.\r\n\r\nThanks,\r\n",
+    "body_html": "<div dir=\"ltr\">Hi Team,<br><br>I am unable to access the dashboard after logging in. It keeps loading for a long time and eventually shows a blank screen.<br><br>I tried clearing browser cache and using another browser but still facing the same issue.<br><br>Please check this on priority as I need to access reports.<br><br>Thanks,</div>\r\n",
+    "body_source": "text/plain",
+    "attachments": [],
+    "labels": [
+      "Label_1",
+      "IMPORTANT",
+      "CATEGORY_PERSONAL",
+      "INBOX"
+    ],
+    "entities": {
+      "account_email_in_body": null
+    },
+    "validation_result": {
+      "label": "valid_issue",
+      "reason": "Customer reports a persistent dashboard access issue after logging in, requiring support investigation.",
+      "confidence": "high"
+    },
+    "customer_profile": {
+      "found": true,
+      "profile": {
+        "id": 9,
+        "name": "Alex Carter",
+        "email": "04naveenk@gmail.com",
+        "tier": "starter",
+        "company": null,
+        "phone": null,
+        "is_active": true,
+        "account_created_at": "2026-04-25 03:47:12",
+        "created_at": "2026-04-25 03:47:12"
+      },
+      "message": "Customer profile retrieved successfully"
+    },
+    "ticket_history": {
+      "customer_id": 9,
+      "ticket_count": 1,
+      "tickets": [
+        {
+          "id": 11,
+          "subject": "Login page not loading after password reset",
+          "ticket_type": "technical_support",
+          "urgency": "P3",
+          "status": "closed",
+          "assigned_team": "tier1-support",
+          "jira_id": "TECHSUP-204",
+          "created_at": "2026-03-12 10:00:00",
+          "resolved_at": "2026-03-13 14:30:00"
+        }
+      ],
+      "message": "1 ticket(s) found for customer 9"
+    },
+    "duplicate_check": {
+      "is_duplicate": false,
+      "duplicate_count": 0,
+      "matched_issues": [],
+      "first_match_strategy": null,
+      "first_match_full_result": null,
+      "strategies_run": [
+        "agent"
+      ]
+    },
+    "customer_context": {
+      "tier": "starter",
+      "name": "Alex Carter",
+      "company": null,
+      "open_issue_count": 0,
+      "total_past_issues": 1,
+      "account_age_days": 2
+    },
+    "confluence_result": {
+      "escalate_to_human": false,
+      "reply_msg": "Hi Naveen,\n\nI understand you're unable to access the dashboard after logging in, and it's showing a blank screen even after clearing your browser cache and trying another browser. This issue is often related to frontend rendering or browser-specific problems.\n\nTo help resolve this, please try the following additional steps:\n\n1.  **Perform a hard refresh**: Press `Ctrl + Shift + R` (Windows/Linux) or `Cmd + Shift + R` (Mac) to force your browser to reload the page and clear its cache more thoroughly.\n2.  **Check the developer console for errors**: While on the blank dashboard page, open your browser's developer console (usually by pressing `F12` or `Ctrl + Shift + I`, then navigate to the 'Console' tab). Look for any error messages, especially JavaScript errors, and let us know if you find any.\n3.  **Disable browser extensions**: Temporarily disable any browser extensions you have installed, as they can sometimes interfere with page rendering.\n4.  **Logout and login again**: Completely log out of your account and then log back in.\n5.  **Check your internet connection**: Ensure you have a stable internet connection.\n\nIf the issue persists after trying these steps, please provide any error messages from the developer console, and we can investigate further.\n\nThanks,\n[Your Name]",
+      "confidence": "high",
+      "doc_title": "Blank Screen After Login",
+      "doc_url": "https://ragworks-ai.atlassian.net/wiki/spaces/~712020a9d654a002464a5ca319326dbd64e20b/pages/2162689/Blank+Screen+After+Login",
+      "cql_used": "text ~ \"cannot access dashboard\" OR text ~ \"dashboard loading\" OR text ~ \"blank screen after login\" ORDER BY lastmodified DESC",
+      "docs_found": 1
+    },
+    "reply_result": {
+      "status": "sent",
+      "message_id": "19dd04190153ef8b",
+      "recipient": "04naveenk@gmail.com",
+      "draft": "Hi Naveen,\n\nThank you for reaching out to us. I understand you're unable to access your dashboard after logging in, experiencing a blank screen even after clearing your browser cache and trying a different browser. I recognize how important it is for you to access your reports, and I apologize for any inconvenience this may be causing.\n\nThis issue is often related to frontend rendering or browser-specific problems. To help resolve this, please try the following additional steps:\n\n1.  **Perform a hard refresh**: Press `Ctrl + Shift + R` (Windows/Linux) or `Cmd + Shift + R` (Mac) to force your browser to reload the page and clear its cache more thoroughly.\n2.  **Check the developer console for errors**: While on the blank dashboard page, open your browser's developer console (usually by pressing `F12` or `Ctrl + Shift + I`, then navigate to the 'Console' tab). Please look for any error messages, especially JavaScript errors, and note them down if you find any.\n3.  **Disable browser extensions**: Temporarily disable any browser extensions you have installed, as they can sometimes interfere with page rendering.\n4.  **Logout and login again**: Completely log out of your account and then log back in.\n5.  **Check your internet connection**: Please ensure you have a stable internet connection.\n\nYou can also find these steps and more information in our knowledge base article: [Blank Screen After Login](https://ragworks-ai.atlassian.net/wiki/spaces/~712020a9d654a002464a5ca319326dbd64e20b/pages/2162689/Blank+Screen+After+Login)\n\nIf the issue persists after trying these steps, please reply to this email with any error messages you found in the developer console, and a support agent will follow up with you to investigate further.\n\nThanks,\nCustomer Support Team"
+    }
+  }
+]

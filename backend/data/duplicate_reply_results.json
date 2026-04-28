@@ -1,0 +1,99 @@
+[
+  {
+    "gmail_id": "19dd02a99c5f2c48",
+    "thread_id": "19dd02a99c5f2c48",
+    "message_id": "<CABuURmTW87CgCjo421KmbbOXuiVcturfSks3y7UJ-MNBSpWxuA@mail.gmail.com>",
+    "subject": "Request to delete account",
+    "sender_raw": "Naveen Kumar <04naveenk@gmail.com>",
+    "sender_name": "Naveen Kumar",
+    "sender_email": "04naveenk@gmail.com",
+    "recipient": "Naveen Kumar <kumarnaveen54950@gmail.com>",
+    "date": "Mon, 27 Apr 2026 23:48:56 +0530",
+    "snippet": "Hi, I would like to delete my account and all associated data. Please process this request. Thanks,",
+    "body_text": "Hi,\r\n\r\nI would like to delete my account and all associated data.\r\n\r\nPlease process this request.\r\n\r\nThanks,\r\n",
+    "body_html": "<div dir=\"ltr\">Hi,<br><br>I would like to delete my account and all associated data.<br><br>Please process this request.<br><br>Thanks,</div>\r\n",
+    "body_source": "text/plain",
+    "attachments": [],
+    "labels": [
+      "Label_1",
+      "IMPORTANT",
+      "CATEGORY_PERSONAL",
+      "INBOX"
+    ],
+    "entities": {
+      "account_email_in_body": null
+    },
+    "validation_result": {
+      "label": "valid_issue",
+      "reason": "Customer explicitly requests account and data deletion, which requires support team action.",
+      "confidence": "high"
+    },
+    "customer_profile": {
+      "found": true,
+      "profile": {
+        "id": 9,
+        "name": "Alex Carter",
+        "email": "04naveenk@gmail.com",
+        "tier": "starter",
+        "company": null,
+        "phone": null,
+        "is_active": true,
+        "account_created_at": "2026-04-25 03:47:12",
+        "created_at": "2026-04-25 03:47:12"
+      },
+      "message": "Customer profile retrieved successfully"
+    },
+    "ticket_history": {
+      "customer_id": 9,
+      "ticket_count": 1,
+      "tickets": [
+        {
+          "id": 11,
+          "subject": "Login page not loading after password reset",
+          "ticket_type": "technical_support",
+          "urgency": "P3",
+          "status": "closed",
+          "assigned_team": "tier1-support",
+          "jira_id": "TECHSUP-204",
+          "created_at": "2026-03-12 10:00:00",
+          "resolved_at": "2026-03-13 14:30:00"
+        }
+      ],
+      "message": "1 ticket(s) found for customer 9"
+    },
+    "duplicate_check": {
+      "is_duplicate": true,
+      "duplicate_count": 1,
+      "matched_issues": [
+        {
+          "key": "RA-25",
+          "summary": "Process customer request for account and associated data deletion.",
+          "strategy": "agent"
+        }
+      ],
+      "first_match_strategy": "agent",
+      "first_match_full_result": {
+        "key": "RA-25",
+        "summary": "Process customer request for account and associated data deletion.",
+        "strategy": "agent"
+      },
+      "strategies_run": [
+        "agent"
+      ]
+    },
+    "customer_context": {
+      "tier": "starter",
+      "name": "Alex Carter",
+      "company": null,
+      "open_issue_count": 0,
+      "total_past_issues": 1,
+      "account_age_days": 2
+    },
+    "reply_result": {
+      "status": "sent",
+      "message_id": "19dd0413b3c7219f",
+      "recipient": "04naveenk@gmail.com",
+      "draft": "Hi Naveen,\n\nThank you for reaching out regarding \"Request to delete account\".\n\nAfter reviewing our system, we found that this issue is already being tracked under existing support ticket RA-25 (current status: In Progress). Our team is actively working on it and you will be notified as soon as there is an update.\n\nIf you have any additional information to share, please reply to this email and we will update the existing case accordingly.\n\nThanks,\nCustomer Support Team"
+    }
+  }
+]

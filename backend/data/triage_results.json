@@ -1,0 +1,208 @@
+[
+  {
+    "gmail_id": "19dd02a469fe6e03",
+    "thread_id": "19dd02a469fe6e03",
+    "message_id": "<CAPDZxvX_oP7YFg-g6snub44r74W9L1DGBvAwEtUh+PEA-DHhRg@mail.gmail.com>",
+    "subject": "UI is confusing",
+    "sender_raw": "Naveen Kumar <naveenkumar04102005@gmail.com>",
+    "sender_name": "Naveen Kumar",
+    "sender_email": "naveenkumar04102005@gmail.com",
+    "recipient": "Naveen Kumar <kumarnaveen54950@gmail.com>",
+    "date": "Mon, 27 Apr 2026 23:48:35 +0530",
+    "snippet": "Hi, The dashboard layout is very confusing and difficult to navigate. It would be helpful if it was simplified. Thanks,",
+    "body_text": "Hi,\r\n\r\nThe dashboard layout is very confusing and difficult to navigate.\r\n\r\nIt would be helpful if it was simplified.\r\n\r\nThanks,\r\n",
+    "body_html": "<div dir=\"ltr\">Hi,<br><br>The dashboard layout is very confusing and difficult to navigate.<br><br>It would be helpful if it was simplified.<br><br>Thanks,</div>\r\n",
+    "body_source": "text/plain",
+    "attachments": [],
+    "labels": [
+      "UNREAD",
+      "IMPORTANT",
+      "CATEGORY_PERSONAL",
+      "INBOX"
+    ],
+    "entities": {
+      "account_email_in_body": null
+    },
+    "validation_result": {
+      "label": "valid_issue",
+      "reason": "Customer reports a usability problem with the dashboard layout and suggests simplification, requiring a support response.",
+      "confidence": "high"
+    },
+    "customer_profile": {
+      "found": true,
+      "profile": {
+        "id": 10,
+        "name": "Chris Foster",
+        "email": "naveenkumar04102005@gmail.com",
+        "tier": "free",
+        "company": null,
+        "phone": null,
+        "is_active": true,
+        "account_created_at": "2026-04-25 03:47:12",
+        "created_at": "2026-04-25 03:47:12"
+      },
+      "message": "Customer profile retrieved successfully"
+    },
+    "ticket_history": {
+      "customer_id": 10,
+      "ticket_count": 1,
+      "tickets": [
+        {
+          "id": 12,
+          "subject": "Charged after cancelling free trial",
+          "ticket_type": "billing",
+          "urgency": "P3",
+          "status": "closed",
+          "assigned_team": "billing-team",
+          "jira_id": "BILL-104",
+          "created_at": "2026-02-18 09:00:00",
+          "resolved_at": "2026-02-19 11:00:00"
+        }
+      ],
+      "message": "1 ticket(s) found for customer 10"
+    },
+    "duplicate_check": {
+      "is_duplicate": false,
+      "duplicate_count": 0,
+      "matched_issues": [],
+      "first_match_strategy": null,
+      "first_match_full_result": null,
+      "strategies_run": [
+        "agent"
+      ]
+    },
+    "customer_context": {
+      "tier": "free",
+      "name": "Chris Foster",
+      "company": null,
+      "open_issue_count": 0,
+      "total_past_issues": 1,
+      "account_age_days": 2
+    },
+    "confluence_result": {
+      "escalate_to_human": true,
+      "reply_msg": "",
+      "confidence": "low",
+      "doc_title": "",
+      "doc_url": "",
+      "cql_used": "text ~ \"dashboard layout\" OR text ~ \"UI confusing\" OR text ~ \"simplify UI\" ORDER BY lastmodified DESC",
+      "docs_found": 0
+    },
+    "triage_result": {
+      "category": "feature_request",
+      "priority": "P4",
+      "sentiment": "frustrated",
+      "suggested_team": "engineering",
+      "summary": "User finds dashboard layout confusing, requests simplification.",
+      "tags": [
+        "dashboard",
+        "ui",
+        "usability",
+        "feature_request"
+      ]
+    }
+  },
+  {
+    "gmail_id": "19dcf3e4fa79e9a6",
+    "thread_id": "19dcf3e4fa79e9a6",
+    "message_id": "<CAPDZxvUKeUPEqgjvUA0rCLj-yrNGPDMbvKakX9aQMGvN0-tbDw@mail.gmail.com>",
+    "subject": "Need export in CSV format",
+    "sender_raw": "Naveen Kumar <naveenkumar04102005@gmail.com>",
+    "sender_name": "Naveen Kumar",
+    "sender_email": "naveenkumar04102005@gmail.com",
+    "recipient": "Naveen Kumar <kumarnaveen54950@gmail.com>",
+    "date": "Mon, 27 Apr 2026 19:30:51 +0530",
+    "snippet": "Hi team, Currently reports are only downloadable in PDF. Can we have an option to export in CSV format? Thanks,",
+    "body_text": "Hi team,\r\n\r\nCurrently reports are only downloadable in PDF.\r\n\r\nCan we have an option to export in CSV format?\r\n\r\nThanks,\r\n",
+    "body_html": "<div dir=\"ltr\">Hi team,<br><br>Currently reports are only downloadable in PDF.<br><br>Can we have an option to export in CSV format?<br><br>Thanks,</div>\r\n",
+    "body_source": "text/plain",
+    "attachments": [],
+    "labels": [
+      "UNREAD",
+      "IMPORTANT",
+      "CATEGORY_PERSONAL",
+      "INBOX"
+    ],
+    "entities": {
+      "account_email_in_body": null
+    },
+    "validation_result": {
+      "label": "valid_issue",
+      "reason": "Customer is making an explicit feature request for CSV export, requiring a support team response.",
+      "confidence": "high"
+    },
+    "customer_profile": {
+      "found": true,
+      "profile": {
+        "id": 10,
+        "name": "Chris Foster",
+        "email": "naveenkumar04102005@gmail.com",
+        "tier": "free",
+        "company": null,
+        "phone": null,
+        "is_active": true,
+        "account_created_at": "2026-04-25 03:47:12",
+        "created_at": "2026-04-25 03:47:12"
+      },
+      "message": "Customer profile retrieved successfully"
+    },
+    "ticket_history": {
+      "customer_id": 10,
+      "ticket_count": 1,
+      "tickets": [
+        {
+          "id": 12,
+          "subject": "Charged after cancelling free trial",
+          "ticket_type": "billing",
+          "urgency": "P3",
+          "status": "closed",
+          "assigned_team": "billing-team",
+          "jira_id": "BILL-104",
+          "created_at": "2026-02-18 09:00:00",
+          "resolved_at": "2026-02-19 11:00:00"
+        }
+      ],
+      "message": "1 ticket(s) found for customer 10"
+    },
+    "duplicate_check": {
+      "is_duplicate": false,
+      "duplicate_count": 0,
+      "matched_issues": [],
+      "first_match_strategy": null,
+      "first_match_full_result": null,
+      "strategies_run": [
+        "agent"
+      ]
+    },
+    "customer_context": {
+      "tier": "free",
+      "name": "Chris Foster",
+      "company": null,
+      "open_issue_count": 0,
+      "total_past_issues": 1,
+      "account_age_days": 2
+    },
+    "confluence_result": {
+      "escalate_to_human": true,
+      "reply_msg": "",
+      "confidence": "low",
+      "doc_title": "",
+      "doc_url": "",
+      "cql_used": "text ~ \"export\" OR text ~ \"CSV\" OR text ~ \"reports\" ORDER BY lastmodified DESC",
+      "docs_found": 0
+    },
+    "triage_result": {
+      "category": "feature_request",
+      "priority": "P4",
+      "sentiment": "neutral",
+      "suggested_team": "engineering",
+      "summary": "Request to add CSV export option for reports.",
+      "tags": [
+        "export",
+        "csv",
+        "reports",
+        "feature_request"
+      ]
+    }
+  }
+]
