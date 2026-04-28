@@ -23,32 +23,37 @@ TriageFlow is an end-to-end agentic AI system that automatically reads unread su
 
 ## Architecture Overview
 
+![Architecture Diagram](Architecture_Diagram.png)
+
 ```
 Gmail Inbox
     │
     ▼
-IntakeAgent          ← OAuth2 Gmail API, fetches unread emails
+IntakeAgent          ← [direct] OAuth2 Gmail API — no LLM, no MCP
     │
     ▼
-ValidationAgent      ← Prompt injection detection + LLM spam/valid filter
+ValidationAgent      ← [direct LLM] Prompt injection detection + spam/valid filter
     │  (spam / non_actionable → Slack notify → EXIT)
     ▼
-CustomerContextAgent ← TiDB Cloud lookup (tier, company) + LLM : duplicate detection
+CustomerContextAgent ← [direct] TiDB MCP lookup (tier, company, open tickets)
+    │                   [FunctionAgent] LLM + Atlassian MCP (searchJiraIssuesUsingJql)
+    │                                   → semantic duplicate detection
     │  (duplicate → auto reply → EXIT)
     ▼
-ConfluenceSearchAgent← Atlassian MCP CQL search + Gemini LLM analysis
+ConfluenceSearchAgent← [FunctionAgent] LLM + Atlassian MCP (searchConfluenceUsingCql)
+    │                                   → decides if confident auto-reply is possible
     │  (confident answer found → auto reply → EXIT)
     ▼
-TriageClassificationAgent ← LLM: category, priority (P1-P4), sentiment, team
+TriageClassificationAgent ← [direct LLM] category, priority (P1–P4), sentiment, team
+    │                         no MCP — pure structured LLM call + output normaliser
+    ▼
+JiraAgent            ← [direct MCP] Atlassian MCP: createJiraIssue — no LLM
     │
     ▼
-JiraAgent            ← Atlassian MCP: createJiraIssue
+NotifySlackAgent     ← [direct MCP] Custom FastMCP: send_bot_message — no LLM
     │
     ▼
-NotifySlackAgent     ← Custom MCP: send_bot_message to support channel
-    │
-    ▼
-ReplyAgent           ← LLM: draft reply email, send via Gmail API
+ReplyAgent           ← [direct LLM] draft reply + Gmail API send — no MCP
 ```
 
 ---
