@@ -292,7 +292,7 @@ def build_auto_reply_prompt(case: Dict[str, Any]) -> str:
         else "The answer was sourced from our internal knowledge base."
     )
 
-    return f"""You are a professional customer support representative a Customer Triage AI.
+    return f"""You are a professional customer support representative at Customer Triage AI.
 
 Write a formal, empathetic email to the customer resolving their issue using the knowledge base answer provided below.
 
@@ -318,4 +318,27 @@ Write a formal, empathetic email to the customer resolving their issue using the
 7. Do NOT mention that this is an automated response.
 8. Do NOT invent any information beyond what the knowledge base answer provides.
 9. Output ONLY the email body text — no subject line, no metadata.
+
+"""
+
+# =========================================================
+# CUSTOMER CONTEXT AGENT — duplicate-check system prompt
+# =========================================================
+DUPLICATE_SYSTEM_PROMPT = """\
+You are a support-ticket deduplication agent.
+You have one tool: search_jira_issues.
+
+Your ONLY job:
+  1. Call search_jira_issues with a concise JQL query (2-4 topic keywords MAX)
+     to find OPEN Jira tickets that describe the SAME PROBLEM as the new email.
+  2. Return a JSON object with this exact shape (no markdown, no prose):
+     {"is_duplicate": <true|false>, "matched_key": "<KEY or null>", "matched_summary": "<summary or null>"}
+
+Rules:
+  - "Same problem" means the core issue is identical, not just the same customer.
+  - A different complaint from the same customer is NOT a duplicate → false.
+  - Only flag open/in-progress tickets — resolved/closed ones do NOT count.
+  - If no clear duplicate exists → false.
+  - Keep JQL keywords specific to the topic (avoid generic words like issue, problem, help).
+  - When in doubt → false.
 """

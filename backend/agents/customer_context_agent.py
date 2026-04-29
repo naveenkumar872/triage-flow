@@ -11,6 +11,7 @@ from llama_index.core.agent import FunctionAgent
 from llama_index.core.tools import FunctionTool
 from utils.agent_logger import log_agent_start, log_agent_end, log_agent_case, log_agent_error
 from utils.cost_tracker import get_tracker
+from agents.prompts import DUPLICATE_SYSTEM_PROMPT
 
 # =========================================================
 # CONFIG
@@ -130,15 +131,7 @@ STOP_WORDS = {
 
 
 def _parse_mcp_raw(raw: str) -> Optional[Any]:
-    """
-    Try all regex/eval strategies to extract JSON from the str-repr of a
-    CallToolResult object.  Returns a parsed Python object or None on failure.
-
-    Strategy order (all confirmed working in test_mcp_parse.py):
-      C  text='(.*?)', annotations  — robust: handles nested braces, DOTALL
-      A  text='({[^']*})'           — simpler fallback for no-annotation reprs
-      D  ast.literal_eval on structuredContent={...}
-    """
+ 
     import ast
 
     # Strategy C: text='...', annotations  (most reliable for TextContent reprs)
@@ -385,24 +378,7 @@ jira_search_tool = FunctionTool.from_defaults(
 )
 
 
-_DUPLICATE_SYSTEM_PROMPT = """\
-You are a support-ticket deduplication agent.
-You have one tool: search_jira_issues.
 
-Your ONLY job:
-  1. Call search_jira_issues with a concise JQL query (2-4 topic keywords MAX)
-     to find OPEN Jira tickets that describe the SAME PROBLEM as the new email.
-  2. Return a JSON object with this exact shape (no markdown, no prose):
-     {"is_duplicate": <true|false>, "matched_key": "<KEY or null>", "matched_summary": "<summary or null>"}
-
-Rules:
-  - "Same problem" means the core issue is identical, not just the same customer.
-  - A different complaint from the same customer is NOT a duplicate → false.
-  - Only flag open/in-progress tickets — resolved/closed ones do NOT count.
-  - If no clear duplicate exists → false.
-  - Keep JQL keywords specific to the topic (avoid generic words like issue, problem, help).
-  - When in doubt → false.
-"""
 
 
 def _build_duplicate_agent() -> FunctionAgent:
@@ -412,7 +388,7 @@ def _build_duplicate_agent() -> FunctionAgent:
         description="Checks whether an incoming email is a duplicate of an existing open Jira ticket.",
         llm=_llm,
         tools=[jira_search_tool],
-        system_prompt=_DUPLICATE_SYSTEM_PROMPT,
+        system_prompt=DUPLICATE_SYSTEM_PROMPT,
     )
 
 
