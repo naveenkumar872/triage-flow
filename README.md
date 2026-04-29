@@ -22,19 +22,13 @@ This manual analysis-and-reply process creates several operational problems:
 
 - **Risk of misdiagnosis:** Without complete context, a support member may misunderstand the issue, suggest the wrong fix, or route the case to the wrong internal team.
 
-- **Inconsistent urgency judgment:** Different support members may interpret the same issue differently, especially when deciding whether it is a minor inconvenience, a blocker, or a critical incident.
-
 - **Slow response drafting:** Support members need to summarize the issue, search for the correct solution, decide what can be promised, and write a professional reply manually.
 
 - **Knowledge lookup burden:** Even if the answer exists in internal documentation, support members must find the right page, verify that it applies to the customer, and convert it into clear customer-facing language.
 
-- **Duplicate investigation effort:** Support members must manually compare new emails with existing tickets to avoid creating duplicate work or giving customers conflicting updates.
-
 - **Tone and empathy challenges:** Support members need to match the customer's sentiment, acknowledge frustration, and keep the reply professional while still being concise and accurate.
 
 - **Human error under workload:** During busy periods, support members may miss important details, forget to include ticket references, choose the wrong response timeline, or overlook escalation signals.
-
-- **Limited consistency across replies:** The final response can vary widely depending on the support member's experience, current workload, product knowledge, and familiarity with the customer's history.
 
 ### Core Problem
 
