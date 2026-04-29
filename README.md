@@ -6,41 +6,78 @@ TriageFlow is an end-to-end agentic AI system that automatically reads unread su
 
 ## Problem Statement
 
-In many SaaS support teams, customer issues still begin as unstructured emails in a shared inbox. A support member has to manually open each message, understand the customer's problem, decide whether it is actionable, check whether the sender is an existing customer, look for previous tickets, search internal documentation, estimate urgency, choose the right team, create a ticket, notify teammates, and send a customer response.
+In many SaaS support teams, customer issues still begin as unstructured emails in a shared inbox.
 
-This manual process creates several operational problems:
+A support member has to manually open each message, understand the customer's problem, decide whether it is actionable, check the customer's account context, look for previous tickets, search internal documentation, estimate urgency, choose the right team, create a ticket, notify teammates, and send a customer response.
+
+### Manual Support Challenges
+
+This manual analysis-and-reply process creates several operational problems:
 
 - **Time-consuming email review:** Team members spend a large part of their day reading and sorting emails before any real troubleshooting begins.
+
 - **Difficulty understanding unclear requests:** Customers may describe issues vaguely, emotionally, or without enough technical detail, forcing support members to infer the actual problem.
+
 - **Manual context gathering:** Before replying, support members must check who the customer is, their account tier, past issues, open tickets, and whether the same problem was already reported.
+
 - **Risk of misdiagnosis:** Without complete context, a support member may misunderstand the issue, suggest the wrong fix, or route the case to the wrong internal team.
+
 - **Inconsistent urgency judgment:** Different support members may interpret the same issue differently, especially when deciding whether it is a minor inconvenience, a blocker, or a critical incident.
+
 - **Slow response drafting:** Support members need to summarize the issue, search for the correct solution, decide what can be promised, and write a professional reply manually.
+
 - **Knowledge lookup burden:** Even if the answer exists in internal documentation, support members must find the right page, verify that it applies to the customer, and convert it into clear customer-facing language.
+
 - **Duplicate investigation effort:** Support members must manually compare new emails with existing tickets to avoid creating duplicate work or giving customers conflicting updates.
+
 - **Tone and empathy challenges:** Support members need to match the customer's sentiment, acknowledge frustration, and keep the reply professional while still being concise and accurate.
+
 - **Human error under workload:** During busy periods, support members may miss important details, forget to include ticket references, choose the wrong response timeline, or overlook escalation signals.
+
 - **Limited consistency across replies:** The final response can vary widely depending on the support member's experience, current workload, product knowledge, and familiarity with the customer's history.
 
-The core problem is that manual issue analysis and customer reply drafting do not scale well. As email volume grows, support members spend more time interpreting messages, gathering context, searching for answers, and composing replies, which leads to slower responses, inconsistent decisions, duplicated effort, and a weaker customer experience.
+### Core Problem
+
+Manual issue analysis and customer reply drafting do not scale well.
+
+As email volume grows, support members spend more time interpreting messages, gathering context, searching for answers, and composing replies. This leads to slower responses, inconsistent decisions, duplicated effort, and a weaker customer experience.
 
 ---
 
 ## Solution
 
-TriageFlow solves this with an AI-powered multi-agent pipeline that acts as an intelligent layer between Gmail, internal knowledge systems, ticketing, Slack, and customer replies. Instead of sending every email directly to a human queue, the system moves each case through purpose-built agents, where every stage adds structure, context, or an operational decision.
+TriageFlow solves this with an AI-powered multi-agent pipeline that acts as an intelligent layer between Gmail, internal knowledge systems, ticketing, Slack, and customer replies.
 
-The workflow starts with the **IntakeAgent**, which reads unread Gmail messages and turns them into normalized case objects. The **ValidationAgent** then acts as the first safety and quality gate: it detects prompt-injection patterns, filters spam and non-actionable emails, and prevents invalid messages from consuming downstream resources. Rejected messages can still be reported to Slack for visibility, but they do not create unnecessary tickets.
+Instead of sending every email directly to a human queue, the system moves each case through purpose-built agents. Each stage adds structure, context, or an operational decision.
 
-For valid support requests, the **CustomerContextAgent** enriches the email with TiDB Cloud customer data such as tier, company, account age, open issue count, and historical ticket count. It also runs an LLM-powered duplicate check against Jira through Atlassian MCP. If the new message matches an existing open ticket, the system sends a duplicate acknowledgement to the customer, notifies Slack, and exits the pipeline without creating another Jira issue.
+### How TriageFlow Handles a Case
 
-If the case is new, the **ConfluenceSearchAgent** searches the internal knowledge base through Atlassian MCP using CQL. A LlamaIndex `FunctionAgent` decides whether the retrieved documentation is specific enough to solve the customer problem. If the answer is confident, the **AutoReplyAgent** drafts and sends a knowledge-base-grounded response, while Slack receives an auto-resolution notification. This handles routine support issues without waiting for human review.
+| Stage | What Happens |
+|-------|--------------|
+| **1. Intake** | The **IntakeAgent** reads unread Gmail messages and converts them into normalized case objects. |
+| **2. Validation** | The **ValidationAgent** detects prompt-injection patterns, filters spam and non-actionable messages, and stops invalid cases from consuming downstream resources. |
+| **3. Customer Context** | The **CustomerContextAgent** enriches valid cases with TiDB Cloud data such as customer tier, company, account age, open issue count, and past ticket history. |
+| **4. Duplicate Check** | The system checks Jira through Atlassian MCP to determine whether the new email matches an existing open ticket. Duplicate cases receive a customer acknowledgement and Slack notification without creating another Jira issue. |
+| **5. Knowledge Base Search** | The **ConfluenceSearchAgent** searches Confluence through Atlassian MCP using CQL and decides whether the documentation can solve the issue confidently. |
+| **6. Auto-Reply or Escalation** | If a confident answer is found, the **AutoReplyAgent** sends a knowledge-base-grounded response. If not, the case moves to human escalation. |
+| **7. Human Routing** | The **TriageClassificationAgent** assigns category, priority (`P1`-`P4`), sentiment, suggested team, summary, and tags. |
+| **8. Ticketing and Notification** | The **JiraAgent** creates the Jira issue, the **NotifySlackAgent** alerts the right channel, and the **ReplyAgent** sends a professional acknowledgement email to the customer. |
 
-Only unresolved cases continue to human escalation. The **TriageClassificationAgent** classifies each case into category, priority (`P1`-`P4`), sentiment, suggested team, summary, and tags. It uses customer context and the failed Confluence search result to make routing more informed. The output is normalized against strict allowed values so downstream systems receive predictable data.
+### What This Improves
 
-Escalated cases are then operationalized automatically: the **JiraAgent** creates a Jira issue with the triage metadata, the **NotifySlackAgent** alerts the appropriate support channel, and the **ReplyAgent** sends a professional acknowledgement email with the ticket reference and expected response timeline. This gives human teams a complete, structured handoff instead of a raw email.
+- Faster first responses for customers.
 
-The system is built around MCP integrations so agents can safely interact with real tools: Atlassian MCP for Jira and Confluence, and a custom FastMCP server for Slack and TiDB tools. It also includes observability through OpenLIT tracing, per-agent cost tracking, runtime JSON artifacts, and structured agent logs. Together, these pieces make the triage pipeline faster, more consistent, easier to audit, and safer to operate in a SaaS support environment.
+- More consistent priority, category, sentiment, and team assignment.
+
+- Fewer duplicate Jira tickets.
+
+- Better use of Confluence knowledge base content.
+
+- More complete handoff to human support teams when escalation is needed.
+
+- Improved visibility through OpenLIT traces, per-agent cost tracking, runtime JSON artifacts, and structured agent logs.
+
+The system is built around MCP integrations so agents can safely interact with real tools: Atlassian MCP for Jira and Confluence, plus a custom FastMCP server for Slack and TiDB tools.
 
 ---
 
