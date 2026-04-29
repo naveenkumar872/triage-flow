@@ -8,33 +8,23 @@ TriageFlow is an end-to-end agentic AI system that automatically reads unread su
 
 In many SaaS support teams, customer issues still begin as unstructured emails in a shared inbox.
 
-A support member has to manually open each message, understand the customer's problem, decide whether it is actionable, check the customer's account context, look for previous tickets, search internal documentation, estimate urgency, choose the right team, create a ticket, notify teammates, and send a customer response.
+A support member has to read each email, understand the customer's issue, gather account and ticket context, search internal documentation, decide urgency, route the case, and write a clear response. As support volume grows, this manual process becomes slow, inconsistent, and difficult to scale.
 
 ### Manual Support Challenges
 
-This manual analysis-and-reply process creates several operational problems:
+The main challenges are:
 
-- **Time-consuming email review:** Team members spend a large part of their day reading and sorting emails before any real troubleshooting begins.
+- **Slow issue analysis:** Support members spend time interpreting unclear emails and collecting missing context before they can act.
 
-- **Difficulty understanding unclear requests:** Customers may describe issues vaguely, emotionally, or without enough technical detail, forcing support members to infer the actual problem.
+- **Manual knowledge search:** Agents must search internal docs, verify the right answer, and rewrite it in customer-friendly language.
 
-- **Manual context gathering:** Before replying, support members must check who the customer is, their account tier, past issues, open tickets, and whether the same problem was already reported.
+- **Inconsistent decisions:** Priority, routing, and reply quality can vary depending on the support member's experience and workload.
 
-- **Risk of misdiagnosis:** Without complete context, a support member may misunderstand the issue, suggest the wrong fix, or route the case to the wrong internal team.
-
-- **Slow response drafting:** Support members need to summarize the issue, search for the correct solution, decide what can be promised, and write a professional reply manually.
-
-- **Knowledge lookup burden:** Even if the answer exists in internal documentation, support members must find the right page, verify that it applies to the customer, and convert it into clear customer-facing language.
-
-- **Tone and empathy challenges:** Support members need to match the customer's sentiment, acknowledge frustration, and keep the reply professional while still being concise and accurate.
-
-- **Human error under workload:** During busy periods, support members may miss important details, forget to include ticket references, choose the wrong response timeline, or overlook escalation signals.
+- **Higher risk of human error:** Important details, duplicate tickets, escalation signals, or response timelines can be missed during busy periods.
 
 ### Core Problem
 
-Manual issue analysis and customer reply drafting do not scale well.
-
-As email volume grows, support members spend more time interpreting messages, gathering context, searching for answers, and composing replies. This leads to slower responses, inconsistent decisions, duplicated effort, and a weaker customer experience.
+Manual support triage depends on a support member repeatedly interpreting emails, gathering context, finding answers, and drafting replies by hand. This slows down response time, creates inconsistent decisions, and makes support quality harder to maintain as ticket volume grows.
 
 ---
 
